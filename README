@@ -1,0 +1,23 @@
+***** denseDT3 **********
+Building a codebook from the huge matrix of dense trajectory features.
+- compile as :
+g++ -L/opt/lib -pipe -Wall -O3 -ggdb denseDT3.cpp -lopencv_core -lopencv_highgui -lopencv_video -lopencv_imgproc -lavformat -lavdevice -lavutil -lavcodec -lswscale
+
+- run as :
+./a.out /Pulsar3/himangi.s/Fall_detection/dense_trajectory_release_v1.2/Hollywood2/ClipSets/AnswerPhone_train.txt Codebook  
+
+-Format of /Pulsar3/himangi.s/Fall_detection/dense_trajectory_release_v1.2/Hollywood2/ClipSets/AnswerPhone_train.txt :
+video_name1 class(+1/-1)
+video_name2 class(+1/-1)
+video_name3 class(+1/-1)
+...
+...
+...
+video_namek class(+1/-1)
+
+- hardcoded parameters
+* location of DenseTrack compiled;
+* feature classes;
+* video types(avi)
+
+
