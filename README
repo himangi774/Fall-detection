@@ -1,4 +1,4 @@
-***** denseDT3 **********
+******************** denseDT3 ************************
 Building a codebook from the huge matrix of dense trajectory features.
 - compile as :
 g++ -L/opt/lib -pipe -Wall -O3 -ggdb denseDT3.cpp -lopencv_core -lopencv_highgui -lopencv_video -lopencv_imgproc -lavformat -lavdevice -lavutil -lavcodec -lswscale
@@ -19,5 +19,44 @@ video_namek class(+1/-1)
 * location of DenseTrack compiled;
 * feature classes;
 * video types(avi)
+
+
+******************** denseDT8 ************************
+Feature quantisation
+- compile as :
+g++ -L/opt/lib -pipe -Wall -O3 -ggdb denseDT8.cpp -lopencv_core -lopencv_highgui -lopencv_video -lopencv_imgproc -lavformat -lavdevice -lavutil -lavcodec -lswscale
+
+- run as :
+./a.out /Pulsar3/himangi.s/Fall_detection/dense_trajectory_release_v1.2/Hollywood2/ClipSets/AnswerPhone_train.txt /Pulsar3/himangi.s/Fall_detection/dense_trajectory_release_v1.2/Hollywood2/ClipSets/AnswerPhone_test.txt /Pulsar3/himangi.s/Fall_detection/dense_trajectory_release_v1.2/Hollywood2/AVIClips Codebook AnswerPhone_train.csv   AnswerPhone_test.csv avi vocab_size 1
+
+-command line arguments
+* training files filename
+video_name1 class(+1/-1)
+video_name2 class(+1/-1)
+video_name3 class(+1/-1)
+...
+...
+...
+video_namek class(+1/-1)
+
+*test files filename
+video_name1 class(+1/-1)
+video_name2 class(+1/-1)
+video_name3 class(+1/-1)
+...
+...
+...
+video_namek class(+1/-1)
+
+*path to vocab files
+*vocab file prefix as passes in second argument of denseDT3.
+*csv file to store the train quantised vectors
+*csv file to store the test quantised vectors
+*a prefix(unused)
+*vocab file size to store the experiments with differen vocab sizes(unused) 
+*skip - to quickly train and test with a few samples, skips skip number of files before chosing next train or text sample. (Use 1 for complete testing)
+
+
+
 
 
